@@ -21,7 +21,6 @@ footskip=1.0 cm, % seperation between body and footer
 \usepackage[
 pdftitle={Suhas Dissanayake's CV},
 pdfauthor={Suhas Dissanayake},
-pdfcreator={LaTeX with RenderCV},
 colorlinks=true,
 urlcolor=primaryColor
 ]{hyperref} % for links, metadata and bookmarks
@@ -140,7 +139,7 @@ urlcolor=primaryColor
 		\LenToUnit{\paperwidth-2 cm-0 cm+0.05cm},
 		\LenToUnit{\paperheight-1.0 cm}
 		){\vtop{{\null}\makebox[0pt][c]{
-					\small\color{gray}\textit{Last updated in September 2024}\hspace{\widthof{Last updated in September 2024}}
+					\small\color{gray}\textit{Last updated in August 2025}\hspace{\widthof{Last updated in August 2025}}
 		}}}%
 	}%
 }%
@@ -152,6 +151,8 @@ urlcolor=primaryColor
 
 
 \begin{document}
+	\placelastupdatedtext % Add this line to display the last updated date
+	
 	\newcommand{\AND}{\unskip
 		\cleaders\copy\ANDbox\hskip\wd\ANDbox
 		\ignorespaces
@@ -206,9 +207,9 @@ urlcolor=primaryColor
 	\vspace{0.10 cm}
 	\begin{onecolentry}
 		\begin{highlights}
-			\item $1^{st}$ year undergraduate.
+			\item $2^{nd}$ year undergraduate.
 			\begin{itemize}
-				\item GPA (Semesters 1\&2): 3.65
+				\item CGPA (Semesters 1\&2): 3.65
 			\end{itemize}
 		\end{highlights}
 	\end{onecolentry}
@@ -244,28 +245,28 @@ urlcolor=primaryColor
 	\end{onecolentry}
 	
 	\section{Certificates \& Achievements}
-       \begin{onecolentry}
-       	\begin{highlights}
-       		\item \textbf{Silver Medal – Sri Lanka Physics Olympiad (2022)}
-       		\begin{itemize}
-       			\item Awarded for achieving 98\% marks in the nationwide physics competition.
-       		\end{itemize}
-       		\item \textbf{Certificate – Professional Web Development using Joomla \& WordPress, Open University of Sri Lanka}
-       		\begin{itemize}
-       			\item Completed a program covering the development and design of various website types (blogging, news, e-commerce, etc.) using WordPress and Joomla.
-       			\item Included instruction on page builder plugins (Elementor, Divi), Advanced Custom Fields, SEO, web traffic analysis, security, backup, migration, and fundamental networking concepts.
-       		\end{itemize}
-       		\item \textbf{Certificate – Machine Learning, Stanford University (Coursera)}
-       		\begin{itemize}
-       			\item Obtained after successfully completing a rigorous online course encompassing:
-       			\begin{itemize}
-       				\item Supervised Machine Learning: Regression and Classification
-       				\item Advanced Learning Algorithms
-       				\item Unsupervised Learning, Recommenders, Reinforcement Learning
-       			\end{itemize}
-       		\end{itemize}
-       	\end{highlights}
-       \end{onecolentry}
+	\begin{onecolentry}
+		\begin{highlights}
+			\item \textbf{Silver Medal – Sri Lanka Physics Olympiad (2022)}
+			\begin{itemize}
+				\item Awarded for achieving 98\% marks in the nationwide physics competition.
+			\end{itemize}
+			\item \textbf{Certificate – Professional Web Development using Joomla \& WordPress, Open University of Sri Lanka}
+			\begin{itemize}
+				\item Completed a program covering the development and design of various website types (blogging, news, e-commerce, etc.) using WordPress and Joomla.
+				\item Included instruction on page builder plugins (Elementor, Divi), Advanced Custom Fields, SEO, web traffic analysis, security, backup, migration, and fundamental networking concepts.
+			\end{itemize}
+			\item \textbf{Certificate – Machine Learning, Stanford University (Coursera)}
+			\begin{itemize}
+				\item Obtained after successfully completing a rigorous online course encompassing:
+				\begin{itemize}
+					\item Supervised Machine Learning: Regression and Classification
+					\item Advanced Learning Algorithms
+					\item Unsupervised Learning, Recommenders, Reinforcement Learning
+				\end{itemize}
+			\end{itemize}
+		\end{highlights}
+	\end{onecolentry}
 	
 	\section{Projects}
 	\begin{twocolentry}{\href{https://github.com/SuhasDissa/Educational-Course-Website}{SuhasDissa/Educational-Course-Website}}
@@ -282,7 +283,7 @@ urlcolor=primaryColor
 	\end{onecolentry}
 	
 	
-	\vspace{0.2 cm}
+	\vspace{0.5 cm}
 	
 	\begin{twocolentry}{\href{https://github.com/SuhasDissa/Food-E-App}{SuhasDissa/Food-E-App}}
 		\textbf{Food-E Food ingredient App}
@@ -297,7 +298,7 @@ urlcolor=primaryColor
 		\end{highlights}
 	\end{onecolentry}
 	
-	\vspace{0.2 cm}
+	\vspace{0.5 cm}
 	
 	\begin{twocolentry}{\href{https://github.com/SuhasDissa/NotQuiteNitro}{SuhasDissa/NotQuiteNitro}}
 		\textbf{NotQuiteNitro Browser extension}
@@ -310,7 +311,7 @@ urlcolor=primaryColor
 		\end{highlights}
 	\end{onecolentry}
 	
-	\vspace{0.2 cm}
+	\vspace{0.5 cm}
 	
 	\begin{twocolentry}{\href{https://www.youtube.com/watch?v=appDAUeFnWI}{YouTube: Sakura 3D Animated Movie}}
 		\textbf{3D Animation for Sakura Musical Event}
@@ -318,13 +319,36 @@ urlcolor=primaryColor
 	\vspace{0.10 cm}
 	\begin{onecolentry}
 		\begin{highlights}
-			\item Solely responsible for the 3D modeling and animation using Blender and Kdenlive for the Sakura Musical by the CSE Department, University of Moratuwa.
+			\item Solely responsible for the 3D modeling and animation using Blender and Kdenlive\\
+			for the Sakura Musical by the CSE Department, University of Moratuwa.
 			\item The animated movie was a featured visual element during the live musical performance.
 		\end{highlights}
 	\end{onecolentry}
 	
+	\vspace{0.5 cm}
+	
+	\begin{twocolentry}{\href{https://github.com/SuhasDissa/ROS_Robot_Controller}{SuhasDissa/ ROS\_Robot\_Controller}}
+		\textbf{An android app to connect to ROS system using ROS Bridge}
+	\end{twocolentry}
+	\vspace{0.10 cm}
+	\begin{onecolentry}
+		\begin{highlights}
+			\item Connect to robots through ROS bridge using WebSocket
+			\item Built-in WebSocket client for ROS bridge communication
+			\item Multiple Control Interfaces:
+			\begin{itemize}
+				\item Joystick control for precise movement
+				\item D-pad for directional commands
+				\item Angle controls for rotation adjustments
+				\item Switches and buttons for various robot functions
+			\end{itemize}
+			\item Real-time visualization of the robot arena
+			\item Live RTSP stream from robot's camera
+		\end{highlights}
+	\end{onecolentry}
+	
 	\section{Open Source Contributions}
-		\begin{twocolentry}{\href{https://github.com/you-apps/RecordYou}{you-apps/RecordYou}}
+	\begin{twocolentry}{\href{https://github.com/you-apps/RecordYou}{you-apps/RecordYou}}
 		\textbf{RecordYou}
 	\end{twocolentry}
 	\vspace{0.10 cm}
@@ -339,7 +363,7 @@ urlcolor=primaryColor
 	
 	\vspace{0.2 cm}
 	
-			\begin{twocolentry}{\href{https://github.com/you-apps/ClockYou}{you-apps/ClockYou}}
+	\begin{twocolentry}{\href{https://github.com/you-apps/ClockYou}{you-apps/ClockYou}}
 		\textbf{ClockYou}
 	\end{twocolentry}
 	\vspace{0.10 cm}
@@ -355,7 +379,7 @@ urlcolor=primaryColor
 	
 	\vspace{0.2 cm}
 	
-			\begin{twocolentry}{\href{https://github.com/you-apps/VibeYou}{you-apps/VibeYou}}
+	\begin{twocolentry}{\href{https://github.com/you-apps/VibeYou}{you-apps/VibeYou}}
 		\textbf{VibeYou}
 	\end{twocolentry}
 	\vspace{0.10 cm}
@@ -371,7 +395,7 @@ urlcolor=primaryColor
 	
 	\vspace{0.2 cm}
 	
-				\begin{twocolentry}{\href{https://github.com/you-apps/CalcYou}{you-apps/CalcYou}}
+	\begin{twocolentry}{\href{https://github.com/you-apps/CalcYou}{you-apps/CalcYou}}
 		\textbf{CalcYou}
 	\end{twocolentry}
 	\vspace{0.10 cm}
