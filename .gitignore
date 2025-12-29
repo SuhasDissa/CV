@@ -2,6 +2,7 @@
 *.gz
 *.pdf
 *.aux
+*.fls
 
 # Node.js
 node_modules/
