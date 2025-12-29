@@ -7,7 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier --write \"**/*.tex\"",
     "format:check": "prettier --check \"**/*.tex\"",
-    "build": "pdflatex CV.tex && pdflatex CV.tex",
+    "lint": "chktex -q -n1 -n2 -n8 -n12 -n13 -n27 -n36 -n37 CV.tex",
+    "lint:verbose": "chktex CV.tex",
+    "build": "pdflatex  -file-line-error -halt-on-error -interaction=nonstopmode -recorder  \"CV.tex\"",
     "build:latexmk": "latexmk -pdf -interaction=nonstopmode CV.tex",
     "clean": "rm -f *.aux *.log *.out *.toc *.fls *.fdb_latexmk"
   },

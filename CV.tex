@@ -80,7 +80,7 @@ parsep=0.10 cm, partopsep=0pt, itemsep=0pt, leftmargin=10pt ] }{ \end{itemize} }
 \linespread{1.5} }{ \par\kern\topsep } % new environment for the header
 \newcommand{\placelastupdatedtext}{% \placetextbox{<horizontal pos>}{<vertical pos>}{<stuff>}
 \AddToShipoutPictureFG*{% Add <stuff> to current page foreground
-\put( \LenToUnit{\paperwidth-2 cm-0 cm+0.05cm}, \LenToUnit{\paperheight-1.0 cm} ){\vtop{{\null}\makebox[0pt][c]{ \small\color{gray}\textit{\hrefWithoutArrow{https://cv.suhasdissa.top}{Last updated in December 2025}}\hspace{\widthof{Last updated in December 2025}} }}}%
+\put(\LenToUnit{\paperwidth-2 cm-0 cm+0.05cm}, \LenToUnit{\paperheight-1.0 cm}){\vtop{{\null}\makebox[0pt][c]{ \small\color{gray}\textit{\hrefWithoutArrow{https://cv.suhasdissa.top}{Last updated in December 2025}}\hspace{\widthof{Last updated in December 2025}} }}}%
 }%
 }%
 % save the original href command in a new command:
@@ -296,7 +296,7 @@ parsep=0.10 cm, partopsep=0pt, itemsep=0pt, leftmargin=10pt ] }{ \end{itemize} }
 
   \begin{twocolentry}
     {\href{https://medium.com/p/24555b16487a}{SLIoT Christmas Challenge Platform}}
-    \textbf{Gaming & Competition Platform}
+    \textbf{Gaming \& Competition Platform}
   \end{twocolentry}
   \vspace{0.10 cm}
   \begin{onecolentry}
