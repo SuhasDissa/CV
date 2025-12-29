@@ -1,14 +1,13 @@
 \documentclass[10pt, letterpaper]{article}
-
 % Packages:
 \usepackage[
-ignoreheadfoot, % set margins without considering header and footer
-top=2 cm, % seperation between body and page edge from the top
-bottom=2 cm, % seperation between body and page edge from the bottom
-left=2 cm, % seperation between body and page edge from the left
-right=2 cm, % seperation between body and page edge from the right
-footskip=1.0 cm, % seperation between body and footer
-% showframe % for debugging 
+  ignoreheadfoot, % set margins without considering header and footer
+  top=2 cm, % seperation between body and page edge from the top
+  bottom=2 cm, % seperation between body and page edge from the bottom
+  left=2 cm, % seperation between body and page edge from the left
+  right=2 cm, % seperation between body and page edge from the right
+  footskip=1.0 cm, % seperation between body and footer
+  % showframe % for debugging
 ]{geometry} % for adjusting page geometry
 \usepackage{titlesec} % for customizing section titles
 \usepackage{tabularx} % for making tables with fixed width columns
@@ -19,10 +18,10 @@ footskip=1.0 cm, % seperation between body and footer
 %\usepackage{fontawesome5} % for using icons
 \usepackage{amsmath} % for math
 \usepackage[
-pdftitle={Suhas Dissanayake's CV},
-pdfauthor={Suhas Dissanayake},
-colorlinks=true,
-urlcolor=primaryColor
+  pdftitle={Suhas Dissanayake's CV},
+  pdfauthor={Suhas Dissanayake},
+  colorlinks=true,
+  urlcolor=primaryColor
 ]{hyperref} % for links, metadata and bookmarks
 \usepackage[pscoord]{eso-pic} % for floating text on the page
 \usepackage{calc} % for calculating lengths
@@ -33,7 +32,6 @@ urlcolor=primaryColor
 \usepackage{ifthen} % for conditional statements
 \usepackage{needspace} % for avoiding page brake right after the section title
 \usepackage{iftex} % check if engine is pdflatex, xetex or luatex
-
 % Ensure that generate pdf is machine readable/ATS parsable:
 \ifPDFTeX
 \input{glyphtounicode}
@@ -42,9 +40,7 @@ urlcolor=primaryColor
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
 \fi
-
 \usepackage{charter}
-
 % Some settings:
 \raggedright
 \AtBeginEnvironment{adjustwidth}{\partopsep0pt} % remove space before adjustwidth environment
@@ -54,389 +50,416 @@ urlcolor=primaryColor
 \setlength{\topskip}{0pt} % no top skip
 \setlength{\columnsep}{0.15cm} % set column seperation
 \pagenumbering{gobble} % no page numbering
-
-\titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
-
+\titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[
+\vspace{1pt}
+\titlerule]
 \titlespacing{\section}{
-	% left space:
-	-1pt
-}{
-	% top space:
-	0.3 cm
-}{
-	% bottom space:
-	0.2 cm
-} % section title spacing
-
-\renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$} % custom bullet points
-\newenvironment{highlights}{
-	\begin{itemize}[
-		topsep=0.10 cm,
-		parsep=0.10 cm,
-		partopsep=0pt,
-		itemsep=0pt,
-		leftmargin=0 cm + 10pt
-		]
-	}{
-	\end{itemize}
-} % new environment for highlights
-
-
-\newenvironment{highlightsforbulletentries}{
-	\begin{itemize}[
-		topsep=0.10 cm,
-		parsep=0.10 cm,
-		partopsep=0pt,
-		itemsep=0pt,
-		leftmargin=10pt
-		]
-	}{
-	\end{itemize}
-} % new environment for highlights for bullet entries
-
-\newenvironment{onecolentry}{
-	\begin{adjustwidth}{
-			0 cm + 0.00001 cm
-		}{
-			0 cm + 0.00001 cm
-		}
-	}{
-	\end{adjustwidth}
-} % new environment for one column entries
-
-\newenvironment{twocolentry}[2][]{
-	\onecolentry
-	\def\secondColumn{#2}
-	\setcolumnwidth{\fill, 4.5 cm}
-	\begin{paracol}{2}
-	}{
-		\switchcolumn \raggedleft \secondColumn
-	\end{paracol}
-	\endonecolentry
-} % new environment for two column entries
-
-\newenvironment{threecolentry}[3][]{
-	\onecolentry
-	\def\thirdColumn{#3}
-	\setcolumnwidth{, \fill, 4.5 cm}
-	\begin{paracol}{3}
-		{\raggedright #2} \switchcolumn
-	}{
-		\switchcolumn \raggedleft \thirdColumn
-	\end{paracol}
-	\endonecolentry
-} % new environment for three column entries
-
+% left space:
+-1pt }{
+% top space:
+0.3 cm }{
+% bottom space:
+0.2 cm } % section title spacing
+\renewcommand{\labelitemi}{$\vcenter{\hbox{\small$\bullet$}}$} % custom bullet points
+\newenvironment{highlights}{ \begin{itemize}[ topsep=0.10 cm, parsep=0.10 cm, partopsep=0pt,
+itemsep=0pt, leftmargin=0 cm + 10pt ] }{ \end{itemize} } % new environment for highlights
+\newenvironment{highlightsforbulletentries}{ \begin{itemize}[ topsep=0.10 cm,
+parsep=0.10 cm, partopsep=0pt, itemsep=0pt, leftmargin=10pt ] }{ \end{itemize} } % new environment for highlights for bullet entries
+\newenvironment{onecolentry}{ \begin{adjustwidth}{ 0 cm + 0.00001 cm }{ 0 cm + 0.00001 cm }
+}{ \end{adjustwidth} } % new environment for one column entries
+\newenvironment{twocolentry}[2][]{ \onecolentry \def\secondColumn{#2} \setcolumnwidth{\fill, 4.5 cm}
+\begin{paracol}{2} }{ \switchcolumn \raggedleft \secondColumn \end{paracol}
+\endonecolentry } % new environment for two column entries
+\newenvironment{threecolentry}[3][]{ \onecolentry \def\thirdColumn{#3} \setcolumnwidth{, \fill, 4.5 cm}
+\begin{paracol}{3} {\raggedright #2} \switchcolumn }{ \switchcolumn \raggedleft \thirdColumn
+\end{paracol} \endonecolentry } % new environment for three column entries
 \newenvironment{header}{
-	\setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.5}
-}{
-	\par\kern\topsep
-} % new environment for the header
-
+\setlength{\topsep}{0pt}
+\par\kern\topsep
+\centering
+\linespread{1.5} }{ \par\kern\topsep } % new environment for the header
 \newcommand{\placelastupdatedtext}{% \placetextbox{<horizontal pos>}{<vertical pos>}{<stuff>}
-	\AddToShipoutPictureFG*{% Add <stuff> to current page foreground
-		\put(
-		\LenToUnit{\paperwidth-2 cm-0 cm+0.05cm},
-		\LenToUnit{\paperheight-1.0 cm}
-		){\vtop{{\null}\makebox[0pt][c]{
-					\small\color{gray}\textit{\hrefWithoutArrow{https://cv.suhasdissa.top}{Last updated in August 2025}}\hspace{\widthof{Last updated in August 2025}}
-		}}}%
-	}%
+\AddToShipoutPictureFG*{% Add <stuff> to current page foreground
+\put( \LenToUnit{\paperwidth-2 cm-0 cm+0.05cm}, \LenToUnit{\paperheight-1.0 cm} ){\vtop{{\null}\makebox[0pt][c]{ \small\color{gray}\textit{\hrefWithoutArrow{https://cv.suhasdissa.top}{Last updated in December 2025}}\hspace{\widthof{Last updated in December 2025}} }}}%
 }%
-
+}%
 % save the original href command in a new command:
 \let\hrefWithoutArrow\href
-
 % new command for external links:
-
-
 \begin{document}
-	\placelastupdatedtext % Add this line to display the last updated date
-	
-	\newcommand{\AND}{\unskip
-		\cleaders\copy\ANDbox\hskip\wd\ANDbox
-		\ignorespaces
-	}
-	\newsavebox\ANDbox
-	\sbox\ANDbox{$|$}
-	
-	\begin{header}
-		\fontsize{25 pt}{25 pt}\selectfont Suhas Dissanayake
-		
-		\vspace{5 pt}
-		
-		\normalsize
-		\mbox{Sri Lanka}%
-		\kern 5.0 pt%
-		\AND%
-		\kern 5.0 pt%
-		\mbox{\hrefWithoutArrow{mailto:suhasdissa@gmail.com}{suhasdissa@gmail.com}}%
-		\kern 5.0 pt%
-		\AND%
-		\kern 5.0 pt%
-		\mbox{\hrefWithoutArrow{tel:+94763357936}{+94 76 335 7936}}%
-		\kern 5.0 pt%
-		\AND%
-		\kern 5.0 pt%
-		\mbox{\hrefWithoutArrow{https://suhasdissa.top/}{suhasdissa.top}}%
-		\kern 5.0 pt%
-		\AND%
-		\kern 5.0 pt%
-		\mbox{\hrefWithoutArrow{https://linkedin.com/in/suhasdissa}{linkedin.com/in/suhasdissa}}%
-		\kern 5.0 pt%
-		\AND%
-		\kern 5.0 pt%
-		\mbox{\hrefWithoutArrow{https://github.com/SuhasDissa}{github.com/SuhasDissa}}%
-		\kern 5.0 pt%
-		\AND%
-		\kern 5.0 pt%
-		\mbox{\hrefWithoutArrow{https://medium.com/@suhasdissa}{medium.com/@suhasdissa}}%
-	\end{header}
-	
-	\vspace{5 pt - 0.3 cm}
-	
-	\section{About Me}
-	\begin{onecolentry}
-		Computer Science \& Engineering undergraduate at University of Moratuwa, passionate about open-source, creative problem solving, and building impactful privacy focused software.
-	\end{onecolentry}
-	
-	\section{Education}
-	\begin{twocolentry}{May 2024 -- Present}
-		\textbf{University of Moratuwa}, BSc Eng Hons, Computer Science \& Engineering
-	\end{twocolentry}
-	\vspace{0.10 cm}
-	\begin{onecolentry}
-		\begin{highlights}
-			\item $2^{nd}$ year undergraduate.
-			\begin{itemize}
-				\item CGPA (Semesters 1\&2): 3.65
-			\end{itemize}
-		\end{highlights}
-	\end{onecolentry}
-	
-	\vspace{0.2 cm}
-	
-	\begin{twocolentry}{Until 2022}
-		\textbf{Badulla Central College, Badulla}
-	\end{twocolentry}
-	\vspace{0.10 cm}
-	\begin{onecolentry}
-		\begin{highlights}
-			\item GCE A/L 2022: 3A Passes (Physical Science Stream)
-			\begin{itemize}
-				\item Z-score: +2.3477
-			\end{itemize}
-			\begin{itemize}
-				\item District Rank: 11
-			\end{itemize}
-			\item GCE O/L 2019: 9A Passes
-		\end{highlights}
-	\end{onecolentry}
-	
-	\section{Experience}
-	\begin{twocolentry}{April 2024 – Present}
-		\textbf{Assistant Manager (Satellite and IT)}, SEDS Mora
-	\end{twocolentry}
-	\vspace{0.10 cm}
-	\begin{onecolentry}
-		\begin{highlights}
-			\item Coordinating IT related work including the SEDS mora website and managing competitions related to satellite and aircraft building.
-		\end{highlights}
-	\end{onecolentry}
-	
-	\section{Certificates \& Achievements}
-	\begin{onecolentry}
-		\begin{highlights}
-			\item \textbf{Silver Medal – Sri Lanka Physics Olympiad (2022)}
-			\begin{itemize}
-				\item Awarded for achieving 98\% marks in the nationwide physics competition.
-			\end{itemize}
-			\item \textbf{Certificate – Professional Web Development using Joomla \& WordPress, Open University of Sri Lanka}
-			\begin{itemize}
-				\item Completed a program covering the development and design of various website types (blogging, news, e-commerce, etc.) using WordPress and Joomla.
-				\item Included instruction on page builder plugins (Elementor, Divi), Advanced Custom Fields, SEO, web traffic analysis, security, backup, migration, and fundamental networking concepts.
-			\end{itemize}
-			\item \textbf{Certificate – Machine Learning, Stanford University (Coursera)}
-			\begin{itemize}
-				\item Obtained after successfully completing a rigorous online course encompassing:
-				\begin{itemize}
-					\item Supervised Machine Learning: Regression and Classification
-					\item Advanced Learning Algorithms
-					\item Unsupervised Learning, Recommenders, Reinforcement Learning
-				\end{itemize}
-			\end{itemize}
-		\end{highlights}
-	\end{onecolentry}
-	
-	\section{Projects}
-	\begin{twocolentry}{\href{https://github.com/SuhasDissa/Educational-Course-Website}{SuhasDissa/Educational-Course-Website}}
-		\textbf{Online Teacher Training Platform}
-	\end{twocolentry}
-	\vspace{0.10 cm}
-	\begin{onecolentry}
-		\begin{highlights}
-			\item Developed a full-stack educational platform for the Uva Provincial Department of Education.
-			\item Built with SvelteKit, PrismaDB, Tailwind, DaisyUI, and LuciaAuth.
-			\item Facilitates training on multilevel teaching methods for over 5596 teachers from Uva and Central Province primary schools.
-			\item Includes progress tracking, automated certificate generation, and a comprehensive admin panel.
-		\end{highlights}
-	\end{onecolentry}
-	
-	
-	\vspace{0.5 cm}
-	
-	\begin{twocolentry}{\href{https://github.com/SuhasDissa/Food-E-App}{SuhasDissa/Food-E-App}}
-		\textbf{Food-E Food ingredient App}
-	\end{twocolentry}
-	\vspace{0.10 cm}
-	\begin{onecolentry}
-		\begin{highlights}
-			\item Provides a database of over 560 artificial food additives and E-numbers with detailed information.
-			\item Features a barcode scanner for instant nutritional information about food products.
-			\item Built using Kotlin, Jetpack Compose, and Room DB.
-			\item Achieved over 1000 downloads on GitHub.
-		\end{highlights}
-	\end{onecolentry}
-	
-	\vspace{0.5 cm}
-	
-	\begin{twocolentry}{\href{https://github.com/SuhasDissa/NotQuiteNitro}{SuhasDissa/NotQuiteNitro}}
-		\textbf{NotQuiteNitro Browser extension}
-	\end{twocolentry}
-	\vspace{0.10 cm}
-	\begin{onecolentry}
-		\begin{highlights}
-			\item Enables the use of emojis and stickers in Discord without a Nitro subscription.
-			\item Has 205+ active users on the Firefox Add-on store.
-		\end{highlights}
-	\end{onecolentry}
-	
-	\vspace{0.5 cm}
-	
-	\begin{twocolentry}{\href{https://www.youtube.com/watch?v=appDAUeFnWI}{YouTube: Sakura 3D Animated Movie}}
-		\textbf{3D Animation for Sakura Musical Event}
-	\end{twocolentry}
-	\vspace{0.10 cm}
-	\begin{onecolentry}
-		\begin{highlights}
-			\item Solely responsible for the 3D modeling and animation using Blender and Kdenlive\\
-			for the Sakura Musical by the CSE Department, University of Moratuwa.
-			\item The animated movie was a featured visual element during the live musical performance.
-		\end{highlights}
-	\end{onecolentry}
-	
-	\vspace{0.5 cm}
-	
-	\begin{twocolentry}{\href{https://github.com/SuhasDissa/ROS_Robot_Controller}{SuhasDissa/ ROS\_Robot\_Controller}}
-		\textbf{An android app to connect to ROS system using ROS Bridge}
-	\end{twocolentry}
-	\vspace{0.10 cm}
-	\begin{onecolentry}
-		\begin{highlights}
-			\item Connect to robots through ROS bridge using WebSocket
-			\item Built-in WebSocket client for ROS bridge communication
-			\item Multiple Control Interfaces:
-			\begin{itemize}
-				\item Joystick control for precise movement
-				\item D-pad for directional commands
-				\item Angle controls for rotation adjustments
-				\item Switches and buttons for various robot functions
-			\end{itemize}
-			\item Real-time visualization of the robot arena
-			\item Live RTSP stream from robot's camera
-		\end{highlights}
-	\end{onecolentry}
-	
-	\section{Open Source Contributions}
-	\begin{twocolentry}{\href{https://github.com/you-apps/RecordYou}{you-apps/RecordYou}}
-		\textbf{RecordYou}
-	\end{twocolentry}
-	\vspace{0.10 cm}
-	\begin{onecolentry}
-		\begin{highlights}
-			\item Introduced a real-time waveform visualiser for enhanced audio feedback during recording.
-			\item Implemented an intuitive screen annotation tool to enrich screen recordings with on-screen drawings.
-			\item Enabled precise audio and video trimming, allowing users to refine their recordings.
-			\item Revamped navigation with Jetpack Compose Navigation, providing a smoother and more consistent user experience.
-		\end{highlights}
-	\end{onecolentry}
-	
-	\vspace{0.2 cm}
-	
-	\begin{twocolentry}{\href{https://github.com/you-apps/ClockYou}{you-apps/ClockYou}}
-		\textbf{ClockYou}
-	\end{twocolentry}
-	\vspace{0.10 cm}
-	\begin{onecolentry}
-		\begin{highlights}
-			\item Significantly enhanced the app's UI/UX for improved usability and visual appeal.
-			\item Added full-screen alarm notifications to ensure important alarms are never missed.
-			\item Bolstered timer and stopwatch accuracy by leveraging Android Services for background operation.
-			\item Improved the world clock with country-based search, making it easier to find specific time zones.
-			\item Introduced theme and appearance customization, allowing users to personalize the app.
-		\end{highlights}
-	\end{onecolentry}
-	
-	\vspace{0.2 cm}
-	
-	\begin{twocolentry}{\href{https://github.com/you-apps/VibeYou}{you-apps/VibeYou}}
-		\textbf{VibeYou}
-	\end{twocolentry}
-	\vspace{0.10 cm}
-	\begin{onecolentry}
-		\begin{highlights}
-			\item Introduced Artist and Album discovery pages, expanding music exploration within the app.
-			\item Optimized the UI for responsiveness across various screen sizes and layouts, ensuring a consistent experience.
-			\item Enhanced local music playback with automatic parsing of album art, artist, and album names.
-			\item Implemented local playlist support for seamless creation and management of personalized music collections.
-			\item Integrated the NewPipe parser for efficient and reliable retrieval of YouTube data.
-		\end{highlights}
-	\end{onecolentry}
-	
-	\vspace{0.2 cm}
-	
-	\begin{twocolentry}{\href{https://github.com/you-apps/CalcYou}{you-apps/CalcYou}}
-		\textbf{CalcYou}
-	\end{twocolentry}
-	\vspace{0.10 cm}
-	\begin{onecolentry}
-		\begin{highlights}
-			\item Developed a custom expression parser enabling robust evaluation of mathematical expressions.
-			\item Improved the UI to ensure seamless adaptation to both portrait and landscape orientations.
-			\item Added a powerful graphing calculator functionality for visualizing mathematical functions.
-			\item Integrated a comprehensive unit converter for convenient conversion between various units.
-		\end{highlights}
-	\end{onecolentry}
-	
-	\vspace{0.2 cm}
-	
-	\section{Technologies}
-	\begin{onecolentry}
-		\textbf{Programming Languages:} Kotlin, Java, C++, C, JavaScript, SQL
-	\end{onecolentry}
-	
-	\vspace{0.2 cm}
-	
-	\begin{onecolentry}
-		\textbf{Frontend:} PHP Laravel, React, Svelte, Tailwind CSS, DaisyUI
-	\end{onecolentry}
-	
-	\vspace{0.2 cm}
-	
-	\begin{onecolentry}
-		\textbf{Back-end/Database:} Postgresql, PrismaDB, Room DB, SvelteKit, Vite
-	\end{onecolentry}
-	
-	\vspace{0.2 cm}
-	
-	\begin{onecolentry}
-		\textbf{Dev Ops / OS:} Linux (Ubuntu \& Arch), Bash, Git, Docker, Kubernetes
-	\end{onecolentry}
-	
-	\vspace{0.2 cm}
-	
-	\begin{onecolentry}
-		\textbf{Other Tool:} Blender, DavinciResolve, Adobe After Effects, Adobe Photoshop, Figma
-	\end{onecolentry}
-	
+  \placelastupdatedtext % Add this line to display the last updated date
+  \newcommand{\AND}{\unskip \cleaders\copy\ANDbox\hskip\wd\ANDbox \ignorespaces }
+  \newsavebox{\ANDbox}
+  \sbox{\ANDbox}{$|$}
+  \begin{header}
+    \fontsize{25 pt}{25 pt}\selectfont Suhas Dissanayake
+    \vspace{5 pt}
+    \normalsize \mbox{Sri Lanka}%
+    \kern 5.0 pt%
+    \AND%
+    \kern 5.0 pt%
+    \mbox{\hrefWithoutArrow{mailto:suhasdissa@gmail.com}{suhasdissa@gmail.com}}%
+    \kern 5.0 pt%
+    \AND%
+    \kern 5.0 pt%
+    \mbox{\hrefWithoutArrow{tel:+94763357936}{+94 76 335 7936}}%
+    \kern 5.0 pt%
+    \AND%
+    \kern 5.0 pt%
+    \mbox{\hrefWithoutArrow{https://suhasdissa.top/}{suhasdissa.top}}%
+    \kern 5.0 pt%
+    \AND%
+    \kern 5.0 pt%
+    \mbox{\hrefWithoutArrow{https://linkedin.com/in/suhasdissa}{linkedin.com/in/suhasdissa}}%
+    \kern 5.0 pt%
+    \AND%
+    \kern 5.0 pt%
+    \mbox{\hrefWithoutArrow{https://github.com/SuhasDissa}{github.com/SuhasDissa}}%
+    \kern 5.0 pt%
+    \AND%
+    \kern 5.0 pt%
+    \mbox{\hrefWithoutArrow{https://medium.com/@suhasdissa}{medium.com/@suhasdissa}}%
+  \end{header}
+  \vspace{5 pt - 0.3 cm}
+  \section{About Me}
+  \begin{onecolentry}
+    Computer Science \& Engineering undergraduate at University of Moratuwa,
+    passionate about open-source, creative problem solving, and building
+    impactful privacy focused software.
+  \end{onecolentry}
+  \section{Education}
+  \begin{twocolentry}
+    {May 2024 -- Present} \textbf{University of Moratuwa}, BSc Eng Hons,
+    Computer Science \& Engineering
+  \end{twocolentry}
+  \vspace{0.10 cm}
+  \begin{onecolentry}
+    \begin{highlights}
+      \item $2^{nd}$ year undergraduate.
+      \begin{itemize}
+        \item CGPA (Semesters 1\&2): 3.65
+      \end{itemize}
+    \end{highlights}
+  \end{onecolentry}
+  \vspace{0.2 cm}
+  \begin{twocolentry}
+    {Until 2022} \textbf{Badulla Central College, Badulla}
+  \end{twocolentry}
+  \vspace{0.10 cm}
+  \begin{onecolentry}
+    \begin{highlights}
+      \item GCE A/L 2022: 3A Passes (Physical Science Stream)
+      \begin{itemize}
+        \item Z-score: +2.3477
+      \end{itemize}
+      \begin{itemize}
+        \item District Rank: 11
+      \end{itemize}
+      \item GCE O/L 2019: 9A Passes
+    \end{highlights}
+  \end{onecolentry}
+
+  \section{Honors \& Awards}
+  \begin{onecolentry}
+    \begin{highlights}
+      \item \textbf{Champion -- Bashaway 2025} | Issued by SLIIT FOSS (Dec 2025)
+      \item \textbf{Champion -- Haxtreme 4.0} | Issued by IEEE Students Branch - University
+      of Ruhuna (Dec 2025) \item \textbf{Champion -- AlgoArena 2025} | Inter-university
+      coding competition by Leo Club of USJ (Dec 2025) \item \textbf{Champion -- OCTWAVE
+      2.0} | Issued by IEEE Students Branch - University of Moratuwa (Nov 2025) \item
+      \textbf{1st Runners Up -- Japura Xtreme 2.0} | Issued by IEEE Computer
+      Society Student Branch, USJ (Oct 2025)
+    \end{highlights}
+  \end{onecolentry}
+
+  \section{Experience}
+  \begin{twocolentry}
+    {Aug 2025 -- Present} \textbf{CSE Student Society, University of Moratuwa}
+  \end{twocolentry}
+  \vspace{0.10 cm}
+  \begin{onecolentry}
+    \begin{highlights}
+      \item \textbf{Assistant Web Master:} Handling web development and DevOps
+      tasks for the society's digital infrastructure. \item \textbf{Publicity
+      Committee Lead (CSE Hit The Grounds 2025):} Led publicity efforts for the
+      annual cricket event. Contributed to the development of the offcial website
+      for Hit The Grounds.
+    \end{highlights}
+  \end{onecolentry}
+
+  \vspace{0.2 cm}
+
+  \begin{twocolentry}
+    {May 2025 -- Present} \textbf{IEEE Student Branch University of Moratuwa}
+  \end{twocolentry}
+  \vspace{0.10 cm}
+  \begin{onecolentry}
+    \begin{highlights}
+      \item \textbf{Web Development Committee Lead (MoraXtreme 10.0):} Leading
+      the development of web platforms for the competition. \item \textbf{Publicity
+      Committee Member (FINNC 2025):} Contributed to the publicity campaign for
+      the Future Innovators Challenge (Mar 2025 - Aug 2025).
+    \end{highlights}
+  \end{onecolentry}
+
+  \vspace{0.2 cm}
+
+  \begin{twocolentry}
+    {April 2025 – Present} \textbf{Assistant Manager (Satellite and IT)}, SEDS Mora
+  \end{twocolentry}
+  \vspace{0.10 cm}
+  \begin{onecolentry}
+    \begin{highlights}
+      \item Coordinating IT related work including the SEDS mora website and managing
+      competitions related to satellite and aircraft building.
+    \end{highlights}
+  \end{onecolentry}
+
+  \vspace{0.2 cm}
+
+  \begin{twocolentry}
+    {July 2025 – Oct 2025} \textbf{Web Development Committee Member}, Math Society
+    UoM
+  \end{twocolentry}
+  \vspace{0.10 cm}
+  \begin{onecolentry}
+    \begin{highlights}
+      \item Contributed to the web development efforts for \textbf{Enigma 2025}.
+    \end{highlights}
+  \end{onecolentry}
+
+  \section{Projects}
+
+  \begin{twocolentry}
+    {\href{https://github.com/Rexosphere}{Rexosphere/LeoConnect}} \textbf{Leo
+    Connect -- Social Platform}
+  \end{twocolentry}
+  \vspace{0.10 cm}
+  \begin{onecolentry}
+    \begin{highlights}
+      \item \textbf{Won 1st Place at AlgoArena 2025.} \item A premier social
+      platform for Leo Club members built with \textbf{Kotlin Multiplatform (KMP)}
+      for Android, iOS, and Desktop. \item \textbf{Tech Stack:} Compose Multiplatform,
+      Voyager, Cloudflare Workers (Backend), D1 Database, R2 Storage, and
+      Firebase Auth. \item Features include a personalized social feed, club
+      discovery, secure E2EE messaging, and real-time push notifications.
+    \end{highlights}
+  \end{onecolentry}
+
+  \vspace{0.5 cm}
+
+  \begin{twocolentry}
+    {\href{https://efsu-uom.lk/}{efsu-uom.lk}} \textbf{EFSU Portal}
+  \end{twocolentry}
+  \vspace{0.10 cm}
+  \begin{onecolentry}
+    \begin{highlights}
+      \item A comprehensive \textbf{Laravel-based} web portal serving over
+      \textbf{4000 engineering students} at the University of Moratuwa. \item
+      Centralizes student engagement with news announcements, event management,
+      resource sharing, and a photo gallery. \item Includes an e-commerce
+      section for Union Merchandise and a forum for student discussions.
+    \end{highlights}
+  \end{onecolentry}
+
+  \vspace{0.5 cm}
+
+  \begin{twocolentry}
+    {\href{https://htg.cse.uom.lk}{htg.cse.uom.lk}} \textbf{CSE Hit The Grounds
+    2025 Registration System}
+  \end{twocolentry}
+  \vspace{0.10 cm}
+  \begin{onecolentry}
+    \begin{highlights}
+      \item Built a \textbf{Laravel} system facilitating the registration of
+      over 20 companies and 240 team members. \item Features a company dashboard for
+      managing team members, updating company descriptions, and uploading logos.
+    \end{highlights}
+  \end{onecolentry}
+
+  \vspace{0.5 cm}
+
+  \begin{twocolentry}
+    {\href{https://robo.cse.mrt.ac.lk}{robo.cse.mrt.ac.lk}} \textbf{IESL
+    RoboGames 25/26 Website}
+  \end{twocolentry}
+  \vspace{0.10 cm}
+  \begin{onecolentry}
+    \begin{highlights}
+      \item Developed using \textbf{Nuxt.js and Vue.js}. \item Features dynamic interactive
+      registration forms, automated confirmation emails, and a comprehensive admin
+      dashboard.
+    \end{highlights}
+  \end{onecolentry}
+
+  \vspace{0.5 cm}
+
+  \begin{twocolentry}
+    {\href{https://medium.com/p/24555b16487a}{SLIoT Christmas Challenge Platform}}
+    \textbf{Gaming & Competition Platform}
+  \end{twocolentry}
+  \vspace{0.10 cm}
+  \begin{onecolentry}
+    \begin{highlights}
+      \item Developed a challenge platform for SLIoT targeting school and university
+      students. \item Engaged 400+ participants who completed browser-based games
+      (Concentration & Sokoban) to win prizes.
+    \end{highlights}
+  \end{onecolentry}
+
+  \vspace{0.5 cm}
+
+  \begin{twocolentry}
+    {\href{https://github.com/SuhasDissa/Educational-Course-Website}{SuhasDissa/Educational-Course-Website}}
+    \textbf{Online Teacher Training Platform}
+  \end{twocolentry}
+  \vspace{0.10 cm}
+  \begin{onecolentry}
+    \begin{highlights}
+      \item Developed a full-stack educational platform for the Uva Provincial Department
+      of Education using SvelteKit, PrismaDB, and LuciaAuth. \item Facilitates
+      training for over 5596 teachers with progress tracking and automated
+      certificate generation.
+    \end{highlights}
+  \end{onecolentry}
+
+  \vspace{0.5 cm}
+
+  \begin{twocolentry}
+    {\href{https://github.com/SuhasDissa/Food-E-App}{SuhasDissa/Food-E-App}} \textbf{Food-E
+    Food ingredient App}
+  \end{twocolentry}
+  \vspace{0.10 cm}
+  \begin{onecolentry}
+    \begin{highlights}
+      \item Android app providing detailed info on 560+ food additives with
+      barcode scanning. \item Built using Kotlin, Jetpack Compose, and Room DB.
+      Achieved 1000+ downloads on GitHub.
+    \end{highlights}
+  \end{onecolentry}
+
+  \vspace{0.5 cm}
+
+  \begin{twocolentry}
+    {\href{https://github.com/SuhasDissa/NotQuiteNitro}{SuhasDissa/NotQuiteNitro}}
+    \textbf{NotQuiteNitro Browser extension}
+  \end{twocolentry}
+  \vspace{0.10 cm}
+  \begin{onecolentry}
+    \begin{highlights}
+      \item Enables the use of emojis and stickers in Discord without a Nitro subscription.
+      \item Has 205+ active users on the Firefox Add-on store.
+    \end{highlights}
+  \end{onecolentry}
+
+  \vspace{0.5 cm}
+
+  \begin{twocolentry}
+    {\href{https://www.youtube.com/watch?v=appDAUeFnWI}{YouTube: Sakura 3D Animated Movie}}
+    \textbf{3D Animation for Sakura Musical Event}
+  \end{twocolentry}
+  \vspace{0.10 cm}
+  \begin{onecolentry}
+    \begin{highlights}
+      \item Solely responsible for the 3D modeling and animation using Blender and
+      Kdenlive for the Sakura Musical by the CSE Department.
+    \end{highlights}
+  \end{onecolentry}
+
+  \section{Open Source Contributions}
+  \begin{twocolentry}
+    {\href{https://github.com/you-apps/RecordYou}{you-apps/RecordYou}} \textbf{RecordYou}
+  \end{twocolentry}
+  \vspace{0.10 cm}
+  \begin{onecolentry}
+    \begin{highlights}
+      \item Introduced a real-time waveform visualiser for enhanced audio feedback
+      during recording. \item Implemented an intuitive screen annotation tool to
+      enrich screen recordings with on-screen drawings. \item Enabled precise audio
+      and video trimming, allowing users to refine their recordings. \item Revamped
+      navigation with Jetpack Compose Navigation, providing a smoother and more
+      consistent user experience.
+    \end{highlights}
+  \end{onecolentry}
+  \vspace{0.2 cm}
+  \begin{twocolentry}
+    {\href{https://github.com/you-apps/ClockYou}{you-apps/ClockYou}} \textbf{ClockYou}
+  \end{twocolentry}
+  \vspace{0.10 cm}
+  \begin{onecolentry}
+    \begin{highlights}
+      \item Significantly enhanced the app's UI/UX for improved usability and visual
+      appeal. \item Added full-screen alarm notifications to ensure important
+      alarms are never missed. \item Bolstered timer and stopwatch accuracy by leveraging
+      Android Services for background operation. \item Improved the world clock
+      with country-based search, making it easier to find specific time zones.
+      \item Introduced theme and appearance customization, allowing users to personalize
+      the app.
+    \end{highlights}
+  \end{onecolentry}
+  \vspace{0.2 cm}
+  \begin{twocolentry}
+    {\href{https://github.com/you-apps/VibeYou}{you-apps/VibeYou}} \textbf{VibeYou}
+  \end{twocolentry}
+  \vspace{0.10 cm}
+  \begin{onecolentry}
+    \begin{highlights}
+      \item Introduced Artist and Album discovery pages, expanding music
+      exploration within the app. \item Optimized the UI for responsiveness across
+      various screen sizes and layouts, ensuring a consistent experience. \item Enhanced
+      local music playback with automatic parsing of album art, artist, and album
+      names. \item Implemented local playlist support for seamless creation and
+      management of personalized music collections. \item Integrated the NewPipe parser
+      for efficient and reliable retrieval of YouTube data.
+    \end{highlights}
+  \end{onecolentry}
+  \vspace{0.2 cm}
+  \begin{twocolentry}
+    {\href{https://github.com/you-apps/CalcYou}{you-apps/CalcYou}} \textbf{CalcYou}
+  \end{twocolentry}
+  \vspace{0.10 cm}
+  \begin{onecolentry}
+    \begin{highlights}
+      \item Developed a custom expression parser enabling robust evaluation of mathematical
+      expressions. \item Improved the UI to ensure seamless adaptation to both
+      portrait and landscape orientations. \item Added a powerful graphing calculator
+      functionality for visualizing mathematical functions. \item Integrated a
+      comprehensive unit converter for convenient conversion between various
+      units.
+    \end{highlights}
+  \end{onecolentry}
+  \section{Certificates}
+  \begin{onecolentry}
+    \begin{highlights}
+      \item \textbf{Silver Medal – Sri Lanka Physics Olympiad (2022)} \item
+      \textbf{Certificate – Machine Learning, Stanford University (Coursera)} \item
+      \textbf{Certificate – Fundamentals of Accelerated Data Science (NVIDIA)}
+      \item \textbf{Certificate – Professional Web Development using Joomla \&
+      WordPress, OUSL}
+    \end{highlights}
+  \end{onecolentry}
+  \vspace{0.2 cm}
+  \section{Technologies}
+  \begin{onecolentry}
+    \textbf{Programming Languages:} Kotlin, Java, C++, C, JavaScript, SQL
+  \end{onecolentry}
+  \vspace{0.2 cm}
+  \begin{onecolentry}
+    \textbf{Frontend:} Kotlin Multiplatform (KMP), Vue.js, Nuxt.js, React,
+    Svelte, Tailwind CSS
+  \end{onecolentry}
+  \vspace{0.2 cm}
+  \begin{onecolentry}
+    \textbf{Back-end/Database:} Cloudflare Workers, Laravel, Postgresql, PrismaDB,
+    Room DB, D1
+  \end{onecolentry}
+  \vspace{0.2 cm}
+  \begin{onecolentry}
+    \textbf{Dev Ops / OS:} Linux (Ubuntu \& Arch), Bash, Git, Docker, Kubernetes
+  \end{onecolentry}
+  \vspace{0.2 cm}
+  \begin{onecolentry}
+    \textbf{Other Tool:} Blender, DavinciResolve, Adobe After Effects, Adobe Photoshop,
+    Figma
+  \end{onecolentry}
 \end{document}

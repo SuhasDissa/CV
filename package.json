@@ -1,0 +1,30 @@
+{
+  "name": "cv",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier --write \"**/*.tex\"",
+    "format:check": "prettier --check \"**/*.tex\"",
+    "build": "pdflatex CV.tex && pdflatex CV.tex",
+    "build:latexmk": "latexmk -pdf -interaction=nonstopmode CV.tex",
+    "clean": "rm -f *.aux *.log *.out *.toc *.fls *.fdb_latexmk"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SuhasDissa/CV.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/SuhasDissa/CV/issues"
+  },
+  "homepage": "https://github.com/SuhasDissa/CV#readme",
+  "devDependencies": {
+    "prettier": "^3.7.4",
+    "prettier-plugin-latex": "^2.0.1"
+  }
+}
