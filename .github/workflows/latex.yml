@@ -16,7 +16,19 @@ jobs:
         run: |
           mkdir -p public
           mv CV.pdf public/
-          cp index.html public/
+          pdf_url="CV.pdf?v=${GITHUB_SHA::7}"
+          cat > public/index.html <<EOF
+          <!DOCTYPE html>
+          <html>
+          <head>
+              <title>Redirecting to PDF</title>
+              <meta http-equiv="refresh" content="0; url=${pdf_url}">
+          </head>
+          <body>
+              <p>You will be automatically redirected to the PDF file. If not, <a href="${pdf_url}">click here</a>.</p>
+          </body>
+          </html>
+          EOF
       - name: Upload PDF artifact
         uses: actions/upload-pages-artifact@v5
         with:
