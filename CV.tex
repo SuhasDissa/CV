@@ -78,9 +78,11 @@ parsep=0.10 cm, partopsep=0pt, itemsep=0pt, leftmargin=10pt ] }{ \end{itemize} }
 \par\kern\topsep
 \centering
 \linespread{1.5} }{ \par\kern\topsep } % new environment for the header
+% automatically derive the current month and year at compile time:
+\newcommand{\lastupdatedtext}{Last updated in \ifcase\month\or January\or February\or March\or April\or May\or June\or July\or August\or September\or October\or November\or December\fi\ \the\year}
 \newcommand{\placelastupdatedtext}{% \placetextbox{<horizontal pos>}{<vertical pos>}{<stuff>}
 \AddToShipoutPictureFG*{% Add <stuff> to current page foreground
-\put(\LenToUnit{\paperwidth-2 cm-0 cm+0.05cm}, \LenToUnit{\paperheight-1.0 cm}){\vtop{{\null}\makebox[0pt][c]{ \small\color{gray}\textit{\hrefWithoutArrow{https://cv.suhasdissa.top}{Last updated in December 2025}}\hspace{\widthof{Last updated in December 2025}} }}}%
+\put(\LenToUnit{\paperwidth-2 cm-0 cm+0.05cm}, \LenToUnit{\paperheight-1.0 cm}){\vtop{{\null}\makebox[0pt][c]{ \small\color{gray}\textit{\hrefWithoutArrow{https://cv.suhasdissa.top}{\lastupdatedtext}}\hspace{\widthof{\lastupdatedtext}} }}}%
 }%
 }%
 % save the original href command in a new command:
@@ -125,9 +127,21 @@ parsep=0.10 cm, partopsep=0pt, itemsep=0pt, leftmargin=10pt ] }{ \end{itemize} }
   \vspace{5 pt - 0.3 cm}
   \section{About Me}
   \begin{onecolentry}
-    Computer Science \& Engineering undergraduate at University of Moratuwa,
-    passionate about open-source, creative problem solving, and building
-    impactful privacy focused software.
+    Computer Science and Engineering undergraduate at the University of Moratuwa
+    in Sri Lanka.
+
+    Deeply drawn to creative problem solving and building things that work
+    beautifully. A true polyglot coder who dives into low-level details
+    with equal ease.
+
+    Thrives on challenges and new territory. Jumps into unfamiliar problems
+    without hesitation, figures things out quickly, and keeps pushing until the
+    work is done. Loves to tinker, experiment boldly, and break things in the
+    pursuit of understanding.
+
+    Holds a strong belief in open source and practical tools that make life
+    simpler. Enjoys clean, efficient code, command line mastery, and turning
+    complex ideas into something people can actually use and enjoy.
   \end{onecolentry}
   \section{Education}
   \begin{twocolentry}
@@ -164,7 +178,9 @@ parsep=0.10 cm, partopsep=0pt, itemsep=0pt, leftmargin=10pt ] }{ \end{itemize} }
   \section{Honors \& Awards}
   \begin{onecolentry}
     \begin{highlights}
-    \item \textbf{Champion -- Codemania 2026} | Issued by IEEE Computer Society of SLTC (Mar 2026)
+    \item \textbf{Honorable Mention -- ICPC Asia West Championship 2025/26} | Represented Sri Lanka at the ICPC Asia West Continent Championship, GLA University, Mathura, India (2026)
+      \item \textbf{4th Runner-Up -- ICPC Sri Lanka 2025/26} | Qualified for the ICPC Asia West Championship, Mathura, India (2026)
+      \item \textbf{Champion -- Codemania 2026} | Issued by IEEE Computer Society of SLTC (Mar 2026)
       \item \textbf{Champion -- Bashaway 2025} | Issued by SLIIT FOSS (Dec 2025)
       \item \textbf{Champion -- Haxtreme 4.0} | Issued by IEEE Students Branch - University
       of Ruhuna (Dec 2025) \item \textbf{Champion -- AlgoArena 2025} | Inter-university
@@ -199,7 +215,9 @@ parsep=0.10 cm, partopsep=0pt, itemsep=0pt, leftmargin=10pt ] }{ \end{itemize} }
   \vspace{0.10 cm}
   \begin{onecolentry}
     \begin{highlights}
-      \item \textbf{Assistant Web Master:} Handling web development and DevOps
+      \item \textbf{Web Master (Aug 2026 -- Present):} Leading web development
+      and DevOps efforts in the society. \item \textbf{Assistant Web Master
+      (Aug 2025 -- Aug 2026):} Handling web development and DevOps
       tasks in the society. \item \textbf{Publicity
       Committee Lead (CSE Hit The Grounds 2025):} Led publicity efforts for the
       annual cricket event. Contributed to the development of the offcial website
@@ -272,6 +290,57 @@ parsep=0.10 cm, partopsep=0pt, itemsep=0pt, leftmargin=10pt ] }{ \end{itemize} }
   \end{onecolentry}
 
   \section{Notable Projects}
+
+  \begin{twocolentry}
+    {} \textbf{Linglo -- AI Travel Language Learning Platform}
+  \end{twocolentry}
+  \vspace{0.10 cm}
+  \begin{onecolentry}
+    \begin{highlights}
+      \item \textbf{Won the Most Popularity Award at Cursor Colombo Buildathon.}
+      \item Built backend services enabling AI-generated course import, lesson
+      persistence, real-time generation updates, and reliable course delivery
+      across service boundaries.
+    \end{highlights}
+  \end{onecolentry}
+
+  \vspace{0.5 cm}
+
+  \begin{twocolentry}
+    {} \textbf{OmniSense -- AI Customer Care \& Commerce Platform}
+  \end{twocolentry}
+  \vspace{0.10 cm}
+  \begin{onecolentry}
+    \begin{highlights}
+      \item \textbf{Reached Top 10 Finalist at Hemas AITHON.} \item Contributed to an
+      AI-powered customer-care and commerce platform by building agent
+      dashboards, chat orchestration flows, multilingual AI routing, complaint
+      knowledge retrieval, and recommendation/forecasting service integrations.
+      \item Built a centralized messaging orchestrator (\textbf{Bun, TypeScript,
+      Elysia, PostgreSQL/Drizzle}) routing messages across Telegram, WhatsApp,
+      Discord, and web chat, with persistence, human-agent escalation,
+      interactive messages, voice transcription/synthesis, and real-time
+      WebSocket chat.
+    \end{highlights}
+  \end{onecolentry}
+
+  \vspace{0.5 cm}
+
+  \begin{twocolentry}
+    {} \textbf{Grocerly -- AI Grocery Intelligence Platform}
+  \end{twocolentry}
+  \vspace{0.10 cm}
+  \begin{onecolentry}
+    \begin{highlights}
+      \item \textbf{Built for AgenTrix 2026, organized by the Computer
+      Engineering Society, University of Ruhuna.} \item Built AI-driven grocery planning services for Sri Lankan households,
+      connecting meal plans, product recommendations, basket optimization,
+      semantic catalog search, and cross-store price comparison into a practical
+      shopping assistant.
+    \end{highlights}
+  \end{onecolentry}
+
+  \vspace{0.5 cm}
 
   \begin{twocolentry}
     {\href{https://github.com/Rexosphere}{Rexosphere/LeoConnect}} \textbf{Leo
@@ -474,7 +543,8 @@ parsep=0.10 cm, partopsep=0pt, itemsep=0pt, leftmargin=10pt ] }{ \end{itemize} }
   \section{Certificates}
   \begin{onecolentry}
     \begin{highlights}
-      \item \textbf{Silver Medal – Sri Lanka Physics Olympiad (2022)} \item
+      \item \textbf{Certificate – Linux Systems Administration and DevOps
+      Engineering Training Program, WSO2, Sri Lanka} \item \textbf{Silver Medal – Sri Lanka Physics Olympiad (2022)} \item
       \textbf{Certificate – Machine Learning, Stanford University (Coursera)} \item
       \textbf{Certificate – Fundamentals of Accelerated Data Science (NVIDIA)}
       \item \textbf{Certificate – Professional Web Development using Joomla \&
